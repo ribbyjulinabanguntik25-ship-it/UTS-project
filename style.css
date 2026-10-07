@@ -1,0 +1,254 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #0d0c22;
+    --primary-hover: #565564;
+    --accent-color: #ea4c89;
+    --bg-light: #ffffff;
+    --text-main: #0d0c22;
+    --text-muted: #6e6d7a;
+    --border-color: #e0e0e0;
+    --font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+}
+
+body {
+    font-family: var(--font-family);
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.5;
+}
+
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    border: 0;
+}
+
+.split-screen {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+
+.branding-side {
+    display: none; /* Sembunyi secara default di mobile */
+    /* Menghubungkan ke file gambar di folder assets */
+    background-image: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.5)), url('../assets/illustration.jpg');
+    background-size: cover;
+    background-position: center;
+    position: relative;
+}
+
+.branding-side .overlay {
+    position: absolute;
+    bottom: 50px;
+    left: 50px;
+    color: white;
+    max-width: 400px;
+}
+
+.branding-side h2 {
+    font-size: 2rem;
+    margin-bottom: 10px;
+}
+
+
+.form-side {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    max-width: 440px;
+    margin: 0 auto;
+    width: 100%;
+}
+
+.form-header {
+    text-align: center;
+    margin-bottom: 24px;
+}
+
+.brand-logo {
+    height: 40px;
+    margin-bottom: 16px;
+}
+
+.form-header h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    color: var(--text-main);
+}
+
+
+.sso-container {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.btn-sso {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 12px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 24px;
+    background: white;
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--text-main);
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-sso:hover {
+    background-color: #f3f3f4;
+}
+
+.divider {
+    width: 100%;
+    text-align: center;
+    position: relative;
+    margin: 20px 0;
+}
+
+.divider::before {
+    content: "";
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background-color: var(--border-color);
+    z-index: 1;
+}
+
+.divider span {
+    position: relative;
+    z-index: 2;
+    background-color: white;
+    padding: 0 12px;
+    color: var(--text-muted);
+    font-size: 0.85rem;
+}
+
+
+.auth-form {
+    width: 100%;
+}
+
+.form-group {
+    margin-bottom: 16px;
+}
+
+.label-row {
+    display: flex;
+    justify-content: flex-end;
+    margin-bottom: 6px;
+}
+
+.forgot-link {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    text-decoration: none;
+}
+
+.forgot-link:hover {
+    text-decoration: underline;
+}
+
+.form-group input[type="text"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 14px 16px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s ease;
+}
+
+.form-group input:focus {
+    border-color: var(--text-main);
+}
+
+.form-options {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.checkbox-container {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+
+.btn-primary {
+    width: 100%;
+    padding: 14px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 24px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.btn-primary:hover {
+    background-color: var(--primary-hover);
+}
+
+
+.form-footer {
+    margin-top: 24px;
+    text-align: center;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.form-footer a {
+    color: var(--text-main);
+    text-decoration: underline;
+}
+
+.signup-text {
+    margin-top: 16px;
+}
+
+
+@media (min-width: 1024px) {
+    .split-screen {
+        flex-direction: row;
+    }
+
+    .branding-side {
+        display: block;
+        flex: 1;
+    }
+
+    .form-side {
+        flex: 1;
+        max-width: 500px;
+        padding: 60px 40px;
+    }
+}
